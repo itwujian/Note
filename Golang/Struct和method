@@ -1,4 +1,30 @@
 一： Struct (结构体)
 
+1. 结构体是复合类型（composite types），也是值类型，因此可以通过 new 函数来创建。
+
+2. 结构体定义
+
+   type myStruct struct {
+    field1 type1
+    field2 type2
+    ...
+   }
+
+   简单的结构体也可以定义为：type T struct {a, b int}
+   
+   结构体的字段可以是任何类型，甚至是结构体本身，也可以是函数或者接口。
+  
+ 3. 结构体的声明与定义
+ 
+    3.1 使用new的方式，使用 new 函数给一个新的结构体变量分配内存，它返回指向已分配内存的指针。
+        
+        var t *myStruct = new(myStruct)
+        
+        t := new(myStruct)
+        
+        或者：var t *myStruct
+              t = new(myStruct)
+        
+
 
 二： Method(方法)
