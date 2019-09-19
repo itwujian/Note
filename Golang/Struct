@@ -85,4 +85,31 @@ Struct (结构体)
         return &File{fd, name}                                             file = new File(fd,name)
     }                                                                      return file
                                                                        }
-                                                                       
+   6. 结构体的匿名字段以及匿名结构体
+   
+      6.1 结构体的匿名字段
+       
+           type A struct {
+	            B              //匿名字段的使用方式
+	            m int
+           }
+ 
+          type B struct {
+             	n int
+           }
+ 
+         func (b *B) my_print() {
+	           fmt.Printf("print B.n=%d\n", b.n)
+         }
+ 
+	      a := &A{B{2}, 3}
+	      fmt.Printf("A.n=%d, A.m=%d\n", a.n, a.m)
+	      a.my_print()
+
+         B是结构体A的匿名字段；所以B的成员n对于结构体A来说相当于是A自己的成员变量a.n，而且，B的方法也是A的方法。
+         
+      6.2 匿名结构体
+      
+          
+      
+   
