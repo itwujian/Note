@@ -1,0 +1,16 @@
+1.  a Go method is a function that acts on variable of a certain type, called the receiver.
+
+   receiver可以是除了接口和指针以外的任何类型，比如函数类型、数组类型、int类型。
+
+   struct + method = 面向对象，一个类型加上它的方法等价于面向对象中的一个类。
+   一个重要的区别是：在 Go 中，类型的代码和绑定在它上面的方法的代码可以不放置在一起，它们可以存在在不同的源文件，唯一的要求是：它们必须是同一个包的。
+
+   方法是不允许重载的，即对于一个类型只能有一个给定名称的方法；但是不同的receiver，在同一个包中是可以有相同的名字的方法。
+   比如：
+        func (a *denseMatrix) Add(b Matrix) Matrix
+        func (a *sparseMatrix) Add(b Matrix) Matrix
+  
+ 2.方法的定义
+   
+        func (recv receiver_type) methodName(parameter_list) (return_value_list) { ... }
+   
